@@ -12,6 +12,6 @@ This is all thanks in part to the Arch wiki which provided some of these configs
 Type $ sudo nano /etc/pulse/daemon.conf
 *Note you can substitute nano for vi or vim if you're awesome enough
 
-Make the changes you see here. 
+Make the changes you see here on Github in the daemon.conf file to your daemon.conf file. 
 Save and restart computer
 Success
