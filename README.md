@@ -8,6 +8,7 @@ You can use this file as a guide to set your Scarlett 2i2 Interface Up and make 
 Please note that you need to remove the ';' in front of the lines you change if you do it manually. Otherwise the lines will be ignored. 
 
 This is all thanks in part to the Arch wiki which provided some of these configs. If you have other configs that worked please submit them. https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Static_noise_when_using_headphones
+The other changes I've made are through trial and error and some random config files I found in forums for other devices. I finally found a balance of quality sound and static free. I hope this helps.
 
 Type $ sudo nano /etc/pulse/daemon.conf
 *Note you can substitute nano for vi or vim if you're awesome enough
