@@ -18,3 +18,28 @@ Type $ sudo nano /etc/pulse/daemon.conf
 Make the changes you see here on Github in the daemon.conf file to your daemon.conf file. 
 Save and restart computer
 Success
+
+## Get Settings Manually for 'Other' USB Interface Devices like PreSonus, etc.
+- Run this command: $ pactl list sinks
+- You will see a list of 'all' audio interfaces. Scroll through terminal to find 'Name' that matches the interface you're configuring (Example: Scarlett, PreSonus)
+- Output pactl list sinks command to a text file if it helps. $ pactl list sinks > audio.txt to output to a txt file. 
+- In the pactl list sinks output look for "Sample Specification" 
+- As an example for PreSonus Studio 2/4 it shows:
+  - s32le 2ch 96000hz
+- Make a copy of your current daemon.conf in case you mess anything up.
+- Next open editor for daemon.conf (Ex: sudo nano /etc/pulse/daemon.conf)
+- Head to section of daemon.conf (default-sample-format = , default-sample-rate =, alternate-sample-rate =, default-sample-channel =
+- Edit those sections listed above to match the output in Sample Specification. 
+(Example PreSonos 2/4)
+- default-sample-format = s32le
+- default-sample-rate = 96000
+- alternate-sample-rate = 44100 *note this is not from output file but generic alternate to use.
+- default-sample-channels = 2
+
+# Additional changes
+-default-fragments = 2
+-default-fragement-size-msec = 250
+
+- CTRL + X to save changes to file.
+- Reboot
+- Success
